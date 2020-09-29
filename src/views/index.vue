@@ -39,20 +39,29 @@ export default {
                 {id:6,name:'我是六'},
                 {id:7,name:'我是七'},
                 {id:8,name:'我是八'},
-                {id:9,name:'我是九'},
-                {id:10,name:'我是十'}
+                {id:9,name:'我是九'}
             ],
             list2: [
                 {id:21,name:'我是二一'},
                 {id:22,name:'我是二二'},
                 {id:23,name:'我是二三'},
-                {id:24,name:'我是二四'}
+                {id:24,name:'我是二四'},
+                {id:25,name:'我是二五'},
+                {id:26,name:'我是二六'},
+                {id:27,name:'我是二七'},
+                {id:28,name:'我是二八'},
+                {id:29,name:'我是二九'}
             ],
             list3: [
-                {id:1,name:'我是三一'},
-                {id:2,name:'我是三二'},
-                {id:3,name:'我是三三'},
-                {id:4,name:'我是三四'}
+                {id:31,name:'我是三一'},
+                {id:32,name:'我是三二'},
+                {id:33,name:'我是三三'},
+                {id:34,name:'我是三四'},
+                {id:35,name:'我是三五'},
+                {id:36,name:'我是三六'},
+                {id:37,name:'我是三七'},
+                {id:38,name:'我是三八'},
+                {id:39,name:'我是三九'}
             ],
         }
     }
@@ -69,14 +78,12 @@ export default {
 }
 .one {
     background-color: red;
-    margin: 15px;
 }
 .two {
     background-color: yellow;
-    margin: 15px;
+    margin:0 10px;
 }
 .three {
     background-color: green;
-    margin: 15px;
 }
 </style>

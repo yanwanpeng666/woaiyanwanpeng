@@ -44,36 +44,29 @@ export default {
 
 <style>
 .board-column-content {
+    text-align: center;
     height: auto;
     overflow: hidden;
     border: 10px solid transparent;
-    min-height: 60px;
-    display: -webkit-box;
-    display: -ms-flexbox;
+    min-height: 34px;
     display: flex;
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
     justify-content: flex-start;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
+}
+.board-column-header {
+    text-align: center;
+    padding: 5px 0;
 }
 .board-column-content .board-item {
     text-align: center;
     cursor: pointer;
     width: 100%;
-    height: 64px;
+    height: 34px;
+    font-size: 12px;
     margin: 5px 0;
     background-color: #fff;
-    line-height: 54px;
-    padding: 5px 10px;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.2);
+    line-height: 34px;
     box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.2);
 }
 </style>
