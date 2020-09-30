@@ -1,23 +1,19 @@
 <template>
   <div>
-      <div class="components-container board">
-        <hello-world class="one" :key="1" :group="group" :list="list1" header-text="left" />
-        <hello-world class="two" :key="2" :group="group" :list="list2" header-text="mid" />
-        <hello-world class="three" :key="3" :group="group" :list="list3" header-text="right" />
-    </div>
-    <el-tooltip placement="top" content="顶部">
-        <back-to-top :custom-style="myBackToTopStyle" :visibility-height="300" :back-position="50" transition-name="fade" />
-    </el-tooltip>
+        <div class="components-container board">
+            <hello-world class="one" :key="1" :group="group" :list="list1" header-text="left" />
+            <hello-world class="two" :key="2" :group="group" :list="list2" header-text="mid" />
+            <hello-world class="three" :key="3" :group="group" :list="list3" header-text="right" />
+        </div>
+        <el-tooltip placement="top" content="顶部">
+            <back-to-top :custom-style="myBackToTopStyle" :visibility-height="300" :back-position="50" transition-name="fade" />
+        </el-tooltip>
   </div>
 </template>
 
 <script>
-import BackToTop from '@/components/BackToTop'
-
+import {getUserInfo, goLogin} from '@/api/login.js'
 export default {
-    components: {
-        BackToTop
-    },
     data() {
         return {
             myBackToTopStyle: {
@@ -64,6 +60,17 @@ export default {
                 {id:39,name:'我是三九'}
             ],
         }
+    },
+    methods: {
+        async getlogin() {
+        //   const info = await getUserInfo({id: 5}); // 传参方式 get 
+        //   const login = await goLogin({data: {item: '12313'}}); // 传参方式 post
+          const info = await getUserInfo();
+          console.log(login, 'login')
+        }
+    },
+    created() {
+        this.getlogin()
     }
 }
 </script>

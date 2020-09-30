@@ -3,17 +3,33 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require('path')
+let target = [
+  '127.0.0.1:9001',
+  '114.115.211.213:9001'
+];
+let proxyTable = {};
 
+for (let i = 0; i < target.length; i++) {
+  debugger
+  let pathRewrite = {};
+  pathRewrite[ '^/'+target[i]+'/law/' ] = '/law/';
+  proxyTable[ '/'+target[i] ] = {
+      timeout: 1920000,
+      target: 'http://'+target[i], // target表示代理的服务器url
+      pathRewrite
+  }
+}
 module.exports = {
   dev: {
 
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+
+    proxyTable: proxyTable,
 
     // Various Dev Server settings
-    host: '10.120.1.131', // can be overwritten by process.env.HOST
+    host: '0.0.0.0', // can be overwritten by process.env.HOST
     port: 4209, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,
