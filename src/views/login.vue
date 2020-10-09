@@ -1,5 +1,5 @@
 <template>
-    <div class="loginbj">
+    <div class="loginbj" :class="{setloginbj: windowWidth<1366}">
         <!-- 登录页面 -->
         <div id="mydiv">
             <!-- 登录背景放置canvas动画 -->
@@ -30,6 +30,7 @@ export default {
                 username: '',
                 password: ''
             },
+            windowWidth: 1600,
             rules: {
                 username: [
                     { required: true, message: '请输入账号', trigger: 'blur' },
@@ -66,6 +67,9 @@ export default {
         for (let i = 0; i < svg.length; i++) {
             svg[i].setAttribute('focusable', false);
         }
+    },
+    created() {
+        this.windowWidth = document.body.clientWidth;
     },
     methods: {
         goLogin(formName) {
