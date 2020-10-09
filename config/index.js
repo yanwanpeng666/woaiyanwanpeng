@@ -10,7 +10,6 @@ let target = [
 let proxyTable = {};
 
 for (let i = 0; i < target.length; i++) {
-  debugger
   let pathRewrite = {};
   pathRewrite[ '^/'+target[i]+'/law/' ] = '/law/';
   proxyTable[ '/'+target[i] ] = {
