@@ -11,4 +11,9 @@ export default {
 </script>
 
 <style>
+#nprogress .bar {
+    height: 4px;
+    border-radius: 4px;
+    z-index: 999999;
+}
 </style>
