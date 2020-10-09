@@ -2,6 +2,18 @@
 
 > A Vue.js project
 
+# clone the project
+git clone https://github.com/yanwanpeng666/woaiyanwanpeng.git
+
+# enter the project directory
+cd woaiyanwanpeng
+
+# install dependency
+npm install
+
+# develop
+npm run dev
+
 ## Build Setup
 
 ``` bash
