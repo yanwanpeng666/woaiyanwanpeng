@@ -1,14 +1,27 @@
 <template>
-  <div>
-        <div class="components-container board">
+    <div>
+        <!-- <div class="components-container board">
             <hello-world class="one" :key="1" :group="group" :list="list1" header-text="left" />
             <hello-world class="two" :key="2" :group="group" :list="list2" header-text="mid" />
             <hello-world class="three" :key="3" :group="group" :list="list3" header-text="right" />
-        </div>
+        </div> -->
+        <el-container>
+            <el-header>
+                <my-header></my-header>
+            </el-header>
+            <el-container>
+                <el-aside width="200px"></el-aside>
+                <el-main>
+                    <router-view/>
+                </el-main>
+            </el-container>
+        </el-container>
+
+        <!-- <header></header> -->
         <el-tooltip placement="top" content="顶部">
             <back-to-top :custom-style="myBackToTopStyle" :visibility-height="300" :back-position="50" transition-name="fade" />
         </el-tooltip>
-  </div>
+    </div>
 </template>
 
 <script>
