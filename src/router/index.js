@@ -29,7 +29,19 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
     NProgress.start();
-    next();
+    if(to.name != 'login') {
+        let token = JSON.parse(window.sessionStorage.getItem('userItem'))||{};
+        if(token.item) {
+            next();
+        } else {
+            next({
+                path: '/',
+                query: {redirect: to.fullPath}  // 将跳转的路由path作为参数，登录成功后跳转到该路由
+            });
+        }
+    } else {
+        next();
+    }
 });
 router.afterEach(() => {
     NProgress.done();

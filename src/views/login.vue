@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import { getUserInfo } from '@/api/login.js'
 export default {
     data() {
         return {
@@ -73,9 +74,17 @@ export default {
     },
     methods: {
         goLogin(formName) {
-            this.$refs[formName].validate((valid) => {
+            this.$refs[formName].validate(async(valid) => {
                 if (valid) {
-                    this.$router.replace({ path: "/home", query: {} });
+                    const info = await getUserInfo();
+                    if(info.success) {
+                        window.sessionStorage.setItem('userItem', JSON.stringify(info.data));
+                        this.$router.push({ path: "/home", query: {} });
+                    } else {
+                        this.$alert('服务异常请联系管理员', '提示', {
+                            confirmButtonText: '确定'
+                        });
+                    }
                 } else {
                     return false;
                 }

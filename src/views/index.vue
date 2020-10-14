@@ -78,8 +78,8 @@ export default {
         async getlogin() {
         //   const info = await getUserInfo({id: 5}); // 传参方式 get 
         //   const login = await goLogin({data: {item: '12313'}}); // 传参方式 post
-          const info = await getUserInfo();
-          console.log(info, 'info')
+        //   const info = await getUserInfo();
+        //   console.log(info, 'info')
         }
     },
     created() {
