@@ -3,12 +3,16 @@
         <ul class="headertop">
             <li class="header-logo"></li>
             <li class="header-mid">
-                <span :class="{active: hIndex == index}" v-for="(item, index) in headerList" :key="index" @click="hIndex = index">{{item}}</span>
+                <template :title="item" v-for="(item, index) in headerList">
+                    <span v-if="index<=4" :title="item.title" :key="index" @click="showMore(item, index)" :class="{active: hIndex == index}">
+                        {{headerList.length>5 && index == 4?'更多':item.title}}
+                    </span>
+                </template>
             </li>
             <li>
                 <span class="usericon"><i class="el-icon-s-custom"></i></span>
                 <span>
-                    超级管理员
+                    {{username.name}}
                 </span>
                 <el-dropdown @command="setUser">
                     <span class="el-dropdown-link setting-header">
@@ -23,6 +27,13 @@
                 </el-dropdown>
             </li>
         </ul>
+         <div class="hide-none-header" v-if="showtype">
+            <template v-for="(item, index) in headerList">
+                <span v-if="index>=4" :title="item.title" :class="{active: showtypeIndex == index}" :key="index" @click="setTypeshow(item, index)">
+                        {{item.title}}
+                </span>
+            </template>
+        </div>
     </div>
 </template>
 
@@ -33,10 +44,79 @@ export default {
             hIndex: 0,
             dropdownList: ['个人信息', '修改信息', '退出'],
             iconList: ['el-icon-user', 'el-icon-edit-outline', 'el-icon-switch-button'],
-            headerList:['首页', '合同管理']
+            headerList:[
+                {
+                    path: '/home',
+                    title: '首页',
+                    name: 'home'
+                },
+                {
+                    path: '/contract',
+                    title: '合同管理',
+                    name: 'contract'
+                },
+                {
+                    path: '/contract',
+                    title: '案件管理',
+                    name: 'contract'
+                },
+                {
+                    path: '/contract',
+                    title: '涉事案件',
+                    name: 'contract'
+                },
+                {
+                    path: '/contract',
+                    title: '数据查找',
+                    name: 'contract'
+                },
+                {
+                    path: '/contract',
+                    title: '大屏数据',
+                    name: 'contract'
+                },
+                {
+                    path: '/contract',
+                    title: '案件管理',
+                    name: 'contract'
+                },
+                {
+                    path: '/contract',
+                    title: '签约主体',
+                    name: 'contract'
+                },
+                {
+                    path: '/contract',
+                    title: '项目在线',
+                    name: 'contract'
+                },
+                 {
+                    path: '/contract',
+                    title: '数据配置',
+                    name: 'contract'
+                }],
+            showtype: false,
+            showtypeIndex: -1,
+            username: {
+                name: ''
+            }
         }
     },
     methods:{
+        setTypeshow(item, index) {
+            this.showtypeIndex = index;
+            this.hIndex = -1;
+        },
+        showMore(item, index) {
+            this.hIndex = index;
+            this.showtypeIndex = -1;
+            if(index == 4) {
+                this.showtype = true;
+            } else {
+                this.showtype = false;
+            }
+            this.$router.push({path: item.path})
+        },
         signout(){
             this.$router.replace({path: '/'});
             // userItem
@@ -49,6 +129,9 @@ export default {
                 default:break;
             }
         }
+    },
+    created() {
+        this.username = window.sessionStorage.getItem('userInfo')?window.sessionStorage.getItem('userInfo'): {name: '超级管理员'};
     }
 }
 </script>

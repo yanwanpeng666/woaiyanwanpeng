@@ -33,16 +33,16 @@
             background-size: 221px 40px;
         }
         .header-mid {
-            width: 60%;
+            width: 61%;
             text-align: center;
             margin: 0 auto;
-            overflow: auto;
+            overflow: hidden;
             .active {
                 border: 1px solid #ffffff;
                 border-radius: 25px;
             }
             span {
-                margin: 0 9px;
+                border: 1px solid #46a3e4;
                 width: 136px;
                 padding: 5px 8px;
                 display: inline-block;
@@ -50,6 +50,31 @@
                 line-height: 22px;
                 cursor: pointer;
             }
+        }
+    }
+    .hide-none-header {
+        padding: 10px 15px;
+        margin: 0 auto;
+        max-width: 46%;
+        background-color: #46a3e4;
+        position: absolute;
+        left: 400px;
+        top: 50px;
+        .active {
+            border: 1px solid #ffffff;
+            border-radius: 25px;
+        }
+        span {
+            width: 136px;
+            padding: 5px 8px;
+            border: 1px solid #46a3e4;
+            display: inline-block;
+            height: 22px;
+            line-height: 22px;
+            margin: 3px 0;
+            cursor: pointer;
+            text-align: center;
+            color: #ffffff;
         }
     }
 }

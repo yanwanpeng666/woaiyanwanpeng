@@ -78,6 +78,12 @@ export default {
                 if (valid) {
                     const info = await getUserInfo();
                     if(info.success) {
+                        if(this.login.username !='root' && this.login.password != '000000'){
+                            this.$alert('账号：root 密码：000000', '试一试', {
+                            confirmButtonText: '确定'
+                        });
+                            return false;
+                        }
                         window.sessionStorage.setItem('userItem', JSON.stringify(info.data));
                         this.$router.push({ path: "/home", query: {} });
                     } else {
