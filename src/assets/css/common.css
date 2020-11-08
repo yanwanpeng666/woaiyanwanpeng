@@ -1,1 +1,4 @@
-@charset "utf-8";.el-header{height:50px !important;padding:0 10px;background-color:#46a3e4}.el-header .headertop li{display:inline-block;height:50px;line-height:50px;font-size:16px;color:#fff}.el-header .headertop li:last-child{float:right;min-width:150px}.el-header .headertop li:last-child .setting-header{font-size:16px;color:#fff;margin-left:15px}/*# sourceMappingURL=common.css.map */
+@charset "utf-8";
+body {
+  min-width: 1260px;
+}

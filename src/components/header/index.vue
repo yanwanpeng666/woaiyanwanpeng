@@ -106,16 +106,17 @@ export default {
         setTypeshow(item, index) {
             this.showtypeIndex = index;
             this.hIndex = -1;
+            this.$router.push({path: item.path})
         },
         showMore(item, index) {
-            this.hIndex = index;
             this.showtypeIndex = -1;
             if(index == 4) {
                 this.showtype = true;
             } else {
                 this.showtype = false;
+                this.$router.push({path: item.path})
             }
-            this.$router.push({path: item.path})
+            this.hIndex = index;
         },
         signout(){
             this.$router.replace({path: '/'});
