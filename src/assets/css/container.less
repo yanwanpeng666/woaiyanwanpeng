@@ -83,3 +83,69 @@
 .el-dropdown-menu__item {
     min-width: 80px;
 }
+// 人工客服
+.customerService {
+    position: fixed;
+    right: 20px;
+    width: 16px;
+    border: 1px solid #46a3e4;
+    border-radius: 6px;
+    padding: 8px 5px;
+    color: #46a3e4;
+    bottom: 50px;
+    cursor: pointer;
+}
+.service-dialog {
+    max-width: 1050px;
+    .service-news {
+        height: 38vh;
+        min-height: 368px;
+        overflow: auto;
+    }
+    .el-dialog__body {
+        min-height: 484px;
+        height: 50vh;
+        overflow: hidden;
+    }
+    .service-textarea {
+        textarea {
+            resize: none;
+        }
+    }
+    .service-news-li {
+        margin: 20px 0;
+        text-align: right;
+        padding: 0 50px;
+        .service-span {
+            padding: 5px 8px;
+            display: inline-block;
+            border-radius: 3px;
+            border: 1px solid #9EEA6A;
+            background-color: #9EEA6A;
+            color: #333333;
+            max-width: 45vh;
+            text-align: left;
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                right: -8px;
+                top: 4px;
+                width: 0;
+                height: 0;
+                border-left: 8px solid #9EEA6A;
+                border-bottom:8px solid transparent;
+                border-top: 8px solid transparent;
+            }
+            .service-user {
+                width: 26px;
+                height: 26px;
+                border-radius: 50%;
+                background-color: red;
+                position: absolute;
+                right: -45px;
+                top: 0;
+            }
+        }
+    }
+}

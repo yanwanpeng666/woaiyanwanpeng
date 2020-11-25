@@ -23,6 +23,12 @@
         <el-tooltip placement="top" content="顶部">
             <back-to-top :custom-style="myBackToTopStyle" :visibility-height="300" :back-position="50" transition-name="fade" />
         </el-tooltip>
+        <div class="customerService" @click="serviceShow">
+            <i class="el-icon-user-solid"></i>
+            人工客服
+        </div>
+        <!-- 人工客服组件 -->
+        <y-customer-service  ref="yService"/>
     </div>
 </template>
 
@@ -77,6 +83,10 @@ export default {
         }
     },
     methods: {
+        // 唤起人工客服
+        serviceShow(){
+            this.$refs.yService.show();
+        },
         async getlogin() {
         //   const info = await getUserInfo({id: 5}); // 传参方式 get 
         //   const login = await goLogin({data: {item: '12313'}}); // 传参方式 post
