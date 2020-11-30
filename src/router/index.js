@@ -64,7 +64,7 @@ router.beforeEach((to, from, next) => {
                     index = 1
                 }
             })
-            if(index == 0) {
+            if(index == 0 && to.name != '404') {
                 Vue.prototype.$common.routTab.push(item);
             }
             next();

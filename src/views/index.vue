@@ -29,8 +29,8 @@
                 <el-main>
                     <div class="settab-home-li">
                         <template  v-for="(item, index) in $common.routTab">
-                            <router-link :title="item.title" replace :to="item.path" :class="{active: linkIndex == index}" :key="index">
-                                <div @click="setLink(index)">
+                            <router-link :title="item.title" replace :to="item.path" :class="{active: $route.path == item.path}" :key="index">
+                                <div>
                                     {{item.title}}
                                     <span class="home-close" @click="closeBtn(item, index)">×</span>
                                 </div>
@@ -61,7 +61,6 @@ export default {
     data() {
         return {
             isCollapse: true,
-            linkIndex: 0,
             myBackToTopStyle: {
                 right: '50px',
                 bottom: '50px',
@@ -143,9 +142,6 @@ export default {
         }
     },
     methods: {
-        setLink(index) {
-            this.linkIndex = index;
-        },
         closeBtn(item, index) {
             // this.$nextTick(()=>{
             //     this.$common.routTab.splice(index, 1);
