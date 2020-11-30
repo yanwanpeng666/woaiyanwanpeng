@@ -5,7 +5,9 @@
             <div class="service-news" id="serviceScoll">
                 <div class="service-news-li" v-for="(item, index) in msgList" :key="index">
                     <span class="service-span">{{item.msg}}
-                        <span class="service-user"></span>
+                        <span class="service-user">
+                            <el-avatar size="small" src="https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png"></el-avatar>
+                        </span>
                     </span>
                 </div>
             </div>
