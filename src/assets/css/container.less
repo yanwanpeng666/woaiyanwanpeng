@@ -80,6 +80,7 @@
         }
     }
 }
+
 .el-dropdown-menu__item {
     min-width: 80px;
 }
@@ -150,6 +151,30 @@
                     line-height: 100%;
                 }
             }
+        }
+    }
+}
+.settab-home-li {
+    a {
+        display: inline-block;
+        padding: 6px 18px;
+        border: 1px solid #ddd;
+        margin: 0 2px;
+        border-radius: 2px;
+        font-size: 14px;
+        position: relative;
+        &:last-child {
+            margin-right: 0;
+        }
+        &:first-child {
+            margin-left: 0;
+        }
+        .home-close {
+            position: absolute;
+            right: 4px;
+            top: 2px;
+            color: #ddd;
+            cursor: pointer;
         }
     }
 }

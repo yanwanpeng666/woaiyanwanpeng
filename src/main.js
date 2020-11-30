@@ -9,9 +9,11 @@ import './assets/css/reset.css'; // 重置样式
 import 'element-ui/lib/theme-chalk/index.css';
 import components from './components/index.js';
 import './assets/css/main.css'; // main样式 压缩后的样式
+import common from './utils/common'; // 公共js
 Vue.config.productionTip = false
 Vue.use(components);  // 全局组件
 Vue.use(ElementUI);
+Vue.use(common);
 Vue.use(vuescroll);
 Vue.component('vue-scroll', vuescroll);
 new Vue({

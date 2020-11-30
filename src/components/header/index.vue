@@ -120,6 +120,7 @@ export default {
         },
         signout(){
             this.$router.replace({path: '/'});
+            this.$common.routTab = [];
             // userItem
         },
         setUser(item) {

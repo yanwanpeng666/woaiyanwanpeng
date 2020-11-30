@@ -1,3 +1,52 @@
 @charset "utf-8";
 // 控制浏览器最小宽度
 body{min-width:1260px}
+a {
+    color: #409eff;
+}
+.el-aside {
+    background-color: #333744;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    bottom: 0;
+    .el-submenu__title {
+        height: 50px;
+        line-height: 50px;
+    }
+    .el-menu-item-group__title {
+        padding: 0;
+    }
+    .el-menu {
+        border-right: unset;
+    }
+    .close-menu {
+        position: absolute;
+        right: -30px;
+        width: 15px;
+        background-color: rebeccapurple;
+        top: 50%;
+        padding: 10px 5px;
+        margin-top: -15px;
+    }
+    .el-submenu {
+        .el-menu-item {
+            min-width: unset;
+            a {
+                color: #ffffff;
+            }
+        }
+    }
+}
+.is-vertical .el-container {
+    padding-left: 200px;
+}
+
+.el-main {
+    position: relative;
+    -webkit-transition: padding 1s;
+    transition: padding 1s;
+    width: 100%;
+    overflow: hidden;
+    padding: 10px 0 20px 25px;
+}

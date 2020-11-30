@@ -11,9 +11,28 @@
             </el-header>
             <el-container>
                 <el-aside width="200px">
-                    
+                    <el-menu default-active="1" collapse-transition class="el-menu-vertical-demo" background-color="#333744" text-color="#fff" unique-opened active-text-color="#ffd04b" router>
+                        <el-submenu :index="index+1+ ''" v-for="(item, index) in menuList" :key="index">
+                            <template slot="title">
+                                <i :class="item.icon"></i>
+                                <span>{{item.name}}</span>
+                            </template>
+                            <el-menu-item-group>
+                                <el-menu-item :index="td.path" v-for="(td, tdIndex) in item.childList" :key="tdIndex">
+                                    <!-- <i :class="td.icon"></i> -->
+                                    {{td.name}}
+                                </el-menu-item>
+                            </el-menu-item-group>
+                        </el-submenu>
+                    </el-menu>
                 </el-aside>
                 <el-main>
+                    <div class="settab-home-li">
+                        <router-link :title="item.title" replace :to="item.path"  v-for="(item, index) in $common.routTab" :key="index">
+                            {{item.title}}
+                            <span class="home-close" @click="closeBtn(item, index)">×</span>
+                        </router-link>
+                    </div>
                     <router-view/>
                 </el-main>
             </el-container>
@@ -37,6 +56,7 @@ import {getUserInfo, goLogin} from '@/api/login.js'
 export default {
     data() {
         return {
+            isCollapse: true,
             myBackToTopStyle: {
                 right: '50px',
                 bottom: '50px',
@@ -80,9 +100,55 @@ export default {
                 {id:38,name:'我是三八'},
                 {id:39,name:'我是三九'}
             ],
+            menuList: [
+                {
+                    name: '工作台',
+                    icon: 'el-icon-s-platform',
+                    childList: [
+                        {
+                            name: '工作台',
+                            path: '/workplatform',
+                            icon: 'el-icon-more',
+                        },
+                    ]
+                },
+                {
+                    name: '智库',
+                    icon: 'el-icon-s-promotion',
+                    childList: [
+                        {
+                            name: '智库',
+                            path: '/home',
+                            icon: 'el-icon-more',
+                        }
+                    ]
+                },
+                {
+                    name: '组件',
+                    icon: 'el-icon-menu',
+                    childList: [
+                        {
+                            name: '组件',
+                            path: '/home',
+                            icon: 'el-icon-more',
+                        }
+                    ]
+                }
+            ]
         }
     },
     methods: {
+        closeBtn(item, index) {
+            // this.$nextTick(()=>{
+            //     this.$common.routTab.splice(index, 1);
+            // })
+        },
+        handleOpen(key, keyPath) {
+            console.log(key, keyPath);
+        },
+        handleClose(key, keyPath) {
+            console.log(key, keyPath);
+        },
         // 唤起人工客服
         serviceShow(){
             this.$refs.yService.show();

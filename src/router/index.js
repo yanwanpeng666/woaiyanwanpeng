@@ -4,6 +4,7 @@ import home from '@/views/index.vue'
 import login from '@/views/login.vue'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
+import { TabPane } from 'element-ui'
 Vue.use(Router)
 
 const router = new Router({
@@ -12,16 +13,36 @@ const router = new Router({
         {
             path: '/',
             name: 'login',
+            meta: {
+                title: '登录',
+            },
             component: login
         },
         {
             path: '/home',
             name: 'home',
-            component: home
+            meta: {
+                title: '首页',
+            },
+            component: home,
+            children: [
+                {
+                    path: '/workplatform',
+                    name: 'workplatform',
+                    meta: {
+                        title: '工作台',
+                    },
+                    component: () => import('@/views/workplatform/workplatform.vue'),
+                },
+            ]
         },
+        
         {
             path: '*',
             name: '404',
+            meta: {
+                title: '404',
+            },
             component: () => import('@/views/404.vue'),
         }
     ]
@@ -32,6 +53,20 @@ router.beforeEach((to, from, next) => {
     if(to.name != 'login') {
         let token = JSON.parse(window.sessionStorage.getItem('userItem'))||{};
         if(token.item) {
+            let item = {
+                name: to.name,
+                path: to.path,
+                title: to.meta.title
+            }
+            let index = 0;
+            Vue.prototype.$common.routTab.forEach((td)=>{
+                if(td.name.indexOf(item.name) !=-1){
+                    index = 1
+                }
+            })
+            if(index == 0) {
+                Vue.prototype.$common.routTab.push(item);
+            }
             next();
         } else {
             next({

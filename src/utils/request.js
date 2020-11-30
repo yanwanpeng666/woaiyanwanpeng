@@ -7,10 +7,10 @@ const serve = axios.create({
 
 serve.interceptors.request.use(
     config => {
+        let target = '114.115.211.213:9001';
         if (process.env.NODE_ENV == 'development') {//如果在开发模式下, 进行动态代理的判断
             // let target = '127.0.0.1:9001';
             // http://10.120.1.139:9010
-            let target = '114.115.211.213:9001';
             if (config.url.indexOf('/law') == 0) {
                 //如果是走后台请求, 那么就进行特殊处理然后走代理
                 config.url = ('/' + target + config.url);
