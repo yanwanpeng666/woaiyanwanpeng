@@ -1,6 +1,7 @@
 <template>
     <div>
-        21
+        <div>你好！</div>
+        <div>闫万鹏</div>
     </div>
 </template>
 

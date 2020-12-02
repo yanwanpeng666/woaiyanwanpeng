@@ -5,6 +5,27 @@ let common = {
         let common = {
             //home页标记
             routTab: [],
+             //公用的滚动条样式
+            ops: {
+                vuescroll: {},
+                scrollPanel: {},
+                rail: {
+                    size: '12px',
+                    opacity: 0.3,
+                    background: "#235",
+                    gutterOfSide: '0'
+                },
+                scrollPanel: {
+                    // 是否禁止x或y方向上的滚动
+                    scrollingX: false
+                },
+                bar: {
+                    showDelay: 500,
+                    onlyShowBarOnScroll: false,
+                    background: '#f4f4ff',
+                    opacity: 0.8
+                }
+            },
         };
         $Vue.prototype.$common = common;
     }

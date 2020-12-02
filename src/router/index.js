@@ -24,6 +24,7 @@ const router = new Router({
             meta: {
                 title: '首页',
             },
+            redirect: '/workplatform',
             component: home,
             children: [
                 {
