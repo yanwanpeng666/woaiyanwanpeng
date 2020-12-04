@@ -124,7 +124,7 @@ export default {
                     childList: [
                         {
                             name: '智库',
-                            path: '/home',
+                            path: '/thinktanks',
                             icon: 'el-icon-more',
                         }
                     ]

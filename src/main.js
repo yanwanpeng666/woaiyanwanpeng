@@ -10,11 +10,14 @@ import 'element-ui/lib/theme-chalk/index.css';
 import components from './components/index.js';
 import './assets/css/main.css'; // main样式 压缩后的样式
 import common from './utils/common'; // 公共js
+import Echarts from 'echarts'; 
+ 
 Vue.config.productionTip = false
 Vue.use(components);  // 全局组件
 Vue.use(ElementUI);
 Vue.use(common);
-Vue.use(vuescroll);
+Vue.use(common);
+Vue.use(Echarts);
 Vue.component('vue-scroll', vuescroll);
 new Vue({
     el: '#app',

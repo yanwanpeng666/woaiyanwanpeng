@@ -26,6 +26,11 @@ let common = {
                     opacity: 0.8
                 }
             },
+            userInfo: {},
+            excel(value) {
+                // Vue.$alert('导出excel')
+                window.open('https://bbs.csdn.net/topics/394960088')
+            }
         };
         $Vue.prototype.$common = common;
     }

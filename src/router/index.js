@@ -4,7 +4,6 @@ import home from '@/views/index.vue'
 import login from '@/views/login.vue'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
-import { TabPane } from 'element-ui'
 Vue.use(Router)
 
 const router = new Router({
@@ -35,6 +34,14 @@ const router = new Router({
                     },
                     component: () => import('@/views/workplatform/workplatform.vue'),
                 },
+                {
+                    path: '/thinktanks',
+                    name: 'thinktanks',
+                    meta: {
+                        title: '智库',
+                    },
+                    component: () => import('@/views/workplatform/thinktanks.vue'),
+                }
             ]
         },
         
@@ -53,6 +60,7 @@ router.beforeEach((to, from, next) => {
     NProgress.start();
     if(to.name != 'login') {
         let token = JSON.parse(window.sessionStorage.getItem('userItem'))||{};
+        Vue.prototype.$common.userInfo = token; // 获取用户信息
         if(token.item) {
             let item = {
                 name: to.name,

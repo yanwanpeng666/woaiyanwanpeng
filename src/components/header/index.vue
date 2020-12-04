@@ -12,7 +12,7 @@
             <li>
                 <span class="usericon"><i class="el-icon-s-custom"></i></span>
                 <span>
-                    {{username.name}}
+                    {{$common.userInfo.item}}
                 </span>
                 <el-dropdown @command="setUser">
                     <span class="el-dropdown-link setting-header">
@@ -96,10 +96,7 @@ export default {
                     name: 'contract'
                 }],
             showtype: false,
-            showtypeIndex: -1,
-            username: {
-                name: ''
-            }
+            showtypeIndex: -1
         }
     },
     methods:{
@@ -132,9 +129,7 @@ export default {
             }
         }
     },
-    created() {
-        this.username = window.sessionStorage.getItem('userInfo')?window.sessionStorage.getItem('userInfo'): {name: '超级管理员'};
-    }
+    created() {}
 }
 </script>
 

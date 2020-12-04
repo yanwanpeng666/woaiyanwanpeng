@@ -1,7 +1,11 @@
 <template>
     <div>
-        <div>你好！</div>
-        <div>闫万鹏</div>
+        <div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div>{{$common.userInfo.item}}</div>
     </div>
 </template>
 
