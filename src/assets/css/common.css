@@ -1,0 +1,46 @@
+@charset "utf-8";
+body {
+  min-width: 1260px;
+  font-family: '微软雅黑';
+}
+a {
+  color: #409eff;
+}
+.box-shadow {
+  box-shadow: 0 6px 4px 1px #d7dce8;
+}
+.el-aside {
+  background-color: #333744;
+  position: absolute;
+  left: 0;
+  top: 50px;
+  bottom: 0;
+}
+.el-aside .el-submenu__title {
+  height: 50px;
+  line-height: 50px;
+}
+.el-aside .el-menu-item-group__title {
+  padding: 0;
+}
+.el-aside .el-menu {
+  border-right: unset;
+}
+.el-aside .close-menu {
+  position: absolute;
+  right: -30px;
+  width: 15px;
+  background-color: rebeccapurple;
+  top: 50%;
+  padding: 10px 5px;
+  margin-top: -15px;
+}
+.el-aside .el-submenu .el-menu-item {
+  min-width: unset;
+}
+.el-aside .el-submenu .el-menu-item a {
+  color: #ffffff;
+}
+.is-vertical .el-container {
+  padding-left: 200px;
+}

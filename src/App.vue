@@ -1,21 +1,22 @@
 <template>
-  <div id="app">
-    <router-view/>
-  </div>
+	<div id="app">
+		<transition name="slide-fade">
+			<router-view />
+		</transition>
+	</div>
 </template>
 
 <script>
 export default {
-  name: 'App',
-  created() {
-  }
-}
+	name: "App",
+	created() {},
+};
 </script>
 
 <style>
 #nprogress .bar {
-    height: 4px;
-    border-radius: 4px;
-    z-index: 999999;
+	height: 4px;
+	border-radius: 4px;
+	z-index: 999999;
 }
 </style>

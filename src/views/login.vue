@@ -84,9 +84,11 @@ export default {
                         }
                     }
                     if(info.success) {
-                        if(this.login.username =='root' && this.login.password == '000000'||this.login.username =='ywp' && this.login.password == '000000'){
+                        if(this.login.username =='root' && this.login.password == '000000'||this.login.username =='ywp' && this.login.password == '000000'||this.login.username =='liyang' && this.login.password == '000000'){
                             if(this.login.username =='ywp') {
                                 info.data.item = '闫万鹏'
+                            } else if(this.login.username =='liyang') {
+                                info.data.item = '李洋'
                             }
                         } else {
                             this.$alert('账号：root 密码：000000', '试一试', {

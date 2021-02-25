@@ -1,5 +1,5 @@
 {
-  "name": "woaiyanwanpeng",
+  "name": "yanwanpeng666",
   "version": "0.0.1",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
@@ -11,7 +11,8 @@
   "dependencies": {
     "axios": "^0.20.0",
     "babel-polyfill": "^6.26.0",
-    "echarts": "^5.0.0",
+    "echarts": "^5.0.1",
+    "echarts-liquidfill": "^3.0.0",
     "element-ui": "^2.13.2",
     "fs": "0.0.1-security",
     "http": "0.0.1-security",
@@ -75,5 +76,23 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "description": "> A Vue.js project",
+  "main": ".postcssrc.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yanwanpeng666/woaiyanwanpeng.git"
+  },
+  "keywords": [
+    "ywp921896405"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yanwanpeng666/woaiyanwanpeng/issues"
+  },
+  "homepage": "https://github.com/yanwanpeng666/woaiyanwanpeng#readme"
 }
