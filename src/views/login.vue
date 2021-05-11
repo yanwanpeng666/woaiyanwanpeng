@@ -23,7 +23,6 @@
 </template>
 
 <script>
-import { getUserInfo } from '@/api/login.js'
 export default {
     data() {
         return {
@@ -76,33 +75,26 @@ export default {
         goLogin(formName) {
             this.$refs[formName].validate(async(valid) => {
                 if (valid) {
-                    // const info = await getUserInfo();
                     const info = {
                         success: true,
                         data: {
                             item: '超级管理员'
                         }
                     }
-                    if(info.success) {
-                        if(this.login.username =='root' && this.login.password == '000000'||this.login.username =='ywp' && this.login.password == '000000'||this.login.username =='liyang' && this.login.password == '000000'){
-                            if(this.login.username =='ywp') {
-                                info.data.item = '闫万鹏'
-                            } else if(this.login.username =='liyang') {
-                                info.data.item = '李洋'
-                            }
-                        } else {
-                            this.$alert('账号：root 密码：000000', '试一试', {
-                                confirmButtonText: '确定'
-                            });
-                            return false;
+                    if(this.login.username =='root' && this.login.password == '000000'||this.login.username =='ywp' && this.login.password == '000000'||this.login.username =='liyang' && this.login.password == '000000'){
+                        if(this.login.username =='ywp') {
+                            info.data.item = '闫万鹏'
+                        } else if(this.login.username =='liyang') {
+                            info.data.item = '李洋'
                         }
-                        window.sessionStorage.setItem('userItem', JSON.stringify(info.data));
-                        this.$router.push({ path: "/home", query: {} });
                     } else {
-                        this.$alert('服务异常请联系管理员', '提示', {
+                        this.$alert('账号：root 密码：000000', '试一试', {
                             confirmButtonText: '确定'
                         });
+                        return false;
                     }
+                    window.sessionStorage.setItem('userItem', JSON.stringify(info.data));
+                    this.$router.push({ path: "/home", query: {} });
                 } else {
                     return false;
                 }

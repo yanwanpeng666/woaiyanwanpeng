@@ -2,7 +2,7 @@ import request from '@/utils/request'
 // get 请求
 export function getUserInfo(params) {
     return request({
-        url: '/law/commonLogin/initSessionId',
+        url: '/law/xxx',
         method: 'get',
         params
     })

@@ -108,22 +108,22 @@ export default {
             ],
             menuList: [
                 {
-                    name: '工作台',
+                    name: '首页',
                     icon: 'el-icon-s-platform',
                     childList: [
                         {
-                            name: '工作台',
+                            name: '首页',
                             path: '/workplatform',
                             icon: 'el-icon-more',
                         },
                     ]
                 },
                 {
-                    name: '智库',
+                    name: '百度',
                     icon: 'el-icon-s-promotion',
                     childList: [
                         {
-                            name: '智库',
+                            name: '百度',
                             path: '/thinktanks',
                             icon: 'el-icon-more',
                         }
@@ -162,8 +162,8 @@ export default {
         async getlogin() {
         //   const info = await getUserInfo({id: 5}); // 传参方式 get 
         //   const login = await goLogin({data: {item: '12313'}}); // 传参方式 post
-        //   const info = await getUserInfo();
-        //   console.log(info, 'info')
+          const info = await getUserInfo();
+          console.log(info, 'info')
         }
     },
     created() {

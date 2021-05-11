@@ -10,7 +10,7 @@
             <div class="ref-div">
                 <div id="echarts3" ref="echarts3"></div>
             </div>
-            <div class="ref-div">1</div>
+            <div class="ref-div">{{mail|typeshow}}</div>
         </div>
     </div>
 </template>
@@ -19,7 +19,29 @@
 export default {
     data() {
         return {
-            
+            mail: '12979@126.com'
+        }
+    },
+    filters:{
+        typeshow(item) {
+            if(item){
+                let e = '';
+                let list = (item.split('@')[0]).split('');
+                list.forEach((ele,index)=> {
+                    if(list.length<5) {
+                        if(index==0) {
+                            e = e + ele;
+                        } else {
+                            e = e + '*';
+                        }
+                    } else if((index<2)||(index==list.length-1)||(index==list.length-2)) {
+                        e = e + ele;
+                    } else {
+                        e = e + '*';
+                    }
+                })
+                return e +'@' + (item.split('@')[1]);
+            }
         }
     },
     methods: {

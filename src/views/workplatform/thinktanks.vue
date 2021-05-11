@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- 搜索 -->
-        <form-search v-model="searchValue" @querySearch="querySearch" :placeholder="'智库'">
+        <form-search v-model="searchValue" @querySearch="querySearch" :placeholder="'百度'">
             <template #searchBtn>
                 <el-button size="small">高级搜索</el-button>
                 <el-button size="small" @click="$common.excel(infoData)">导出excel</el-button>

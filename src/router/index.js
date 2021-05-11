@@ -30,7 +30,7 @@ const router = new Router({
                     path: '/workplatform',
                     name: 'workplatform',
                     meta: {
-                        title: '工作台',
+                        title: '首页',
                     },
                     component: () => import('@/views/workplatform/workplatform.vue'),
                 },
@@ -38,7 +38,7 @@ const router = new Router({
                     path: '/thinktanks',
                     name: 'thinktanks',
                     meta: {
-                        title: '智库',
+                        title: '百度',
                     },
                     component: () => import('@/views/workplatform/thinktanks.vue'),
                 }

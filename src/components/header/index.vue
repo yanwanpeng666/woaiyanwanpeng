@@ -52,47 +52,47 @@ export default {
                 },
                 {
                     path: '/contract',
-                    title: '合同管理',
+                    title: '管理1',
                     name: 'contract'
                 },
                 {
                     path: '/contract',
-                    title: '案件管理',
+                    title: '管理2',
                     name: 'contract'
                 },
                 {
                     path: '/contract',
-                    title: '涉事案件',
+                    title: '管理3',
                     name: 'contract'
                 },
                 {
                     path: '/contract',
-                    title: '数据查找',
+                    title: '管理3',
                     name: 'contract'
                 },
                 {
                     path: '/contract',
-                    title: '大屏数据',
+                    title: '管理3',
                     name: 'contract'
                 },
                 {
                     path: '/contract',
-                    title: '案件管理',
+                    title: '管理3',
                     name: 'contract'
                 },
                 {
                     path: '/contract',
-                    title: '签约主体',
+                    title: '管理3',
                     name: 'contract'
                 },
                 {
                     path: '/contract',
-                    title: '项目在线',
+                    title: '管理3',
                     name: 'contract'
                 },
                  {
                     path: '/contract',
-                    title: '数据配置',
+                    title: '管理3',
                     name: 'contract'
                 }],
             showtype: false,
