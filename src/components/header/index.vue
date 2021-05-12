@@ -51,9 +51,9 @@ export default {
                     name: 'home'
                 },
                 {
-                    path: '/contract',
-                    title: '管理1',
-                    name: 'contract'
+                    path: '/formContList',
+                    title: '动态表单',
+                    name: 'formContList'
                 },
                 {
                     path: '/contract',

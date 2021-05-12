@@ -145,6 +145,7 @@ export default {
     },
     methods: {
         closeBtn(item, index) {
+            this.$common.msg('功能未开发！敬请期待!');
             // this.$nextTick(()=>{
             //     this.$common.routTab.splice(index, 1);
             // })

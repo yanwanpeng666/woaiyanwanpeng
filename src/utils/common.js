@@ -26,6 +26,13 @@ let common = {
                     opacity: 0.8
                 }
             },
+            msg:function (value){
+                Vue.$alert(value, '提示', {
+                    confirmButtonText: '确定',
+                    callback: action => {
+                    }
+                });
+            },
             userInfo: {},
             excel(value) {
                 // Vue.$alert('导出excel')

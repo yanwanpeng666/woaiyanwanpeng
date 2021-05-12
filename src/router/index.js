@@ -41,6 +41,14 @@ const router = new Router({
                         title: '百度',
                     },
                     component: () => import('@/views/workplatform/thinktanks.vue'),
+                },
+                {
+                    path: '/formContList',
+                    name: 'formContList',
+                    meta: {
+                        title: '动态表单',
+                    },
+                    component: () => import('@/views/common/formContList.vue'),
                 }
             ]
         },
